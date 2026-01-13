@@ -37,16 +37,20 @@ Project ini dibuat untuk memenuhi tugas Elearning.
 
 ## Screenshot
 ### Halaman Login
-![Login](screenshots/login.png)
+![Login](screenshots/login.jpeg)
 
 ### Daftar Notes
-![Notes](screenshots/notes.png)
+![Notes](screenshots/halamanUtama.jpeg)
 
 ### Form Tambah / Edit
-![Form](screenshots/form.png)
+![Form](screenshots/Formnote.png)
 
-### Firebase Firestore
-![Firestore](screenshots/firestore.png)
+### beranda
+![Beranda](screenshots/beranda.jpeg)
+
+## Video Demo Aplikasi
+[Download / Lihat Video](screenshots/demo.mp4)
+
 
 
 # TugasElearning12_RafiNurMuhammadFauzi_23552011307
