@@ -1,20 +1,53 @@
 HEAD
-# pertemuan13
+# Flutter Notes CRUD
 
-A new Flutter project.
+## Deskripsi
+Aplikasi Flutter Notes dengan konsep **CRUD** yang menggunakan:
+- **Local Storage (SQLite)** untuk menyimpan catatan
+- **Cloud Storage (Firebase Firestore)** untuk data user dan deadline
 
-## Getting Started
+Project ini dibuat untuk memenuhi tugas Elearning.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Fitur
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### CRUD Local Storage (SQLite)
+- Tambah catatan
+- Lihat daftar catatan
+- Edit catatan
+- Hapus catatan
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### CRUD Cloud Storage (Firebase Firestore)
+- Simpan data user
+- Simpan deadline catatan
+- Update deadline
+- Hapus deadline
+
+---
+
+## Teknologi
+- Flutter
+- Firebase Authentication
+- Cloud Firestore
+- SQLite (sqflite)
+- Flutter Local Notifications
+
+---
+
+## Screenshot
+### Halaman Login
+![Login](screenshots/login.png)
+
+### Daftar Notes
+![Notes](screenshots/notes.png)
+
+### Form Tambah / Edit
+![Form](screenshots/form.png)
+
+### Firebase Firestore
+![Firestore](screenshots/firestore.png)
+
 
 # TugasElearning12_RafiNurMuhammadFauzi_23552011307
  44eef7dc9832ca061e83a8dc39f7f29dab9dddc7
