@@ -1,0 +1,64 @@
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+
+class NoteDb {
+  NoteDb._();
+  static final NoteDb instance = NoteDb._();
+
+  static const _dbName = 'notes.db';
+  static const _dbVersion = 1;
+  static const table = 'notes';
+
+  Database? _db;
+
+  Future<Database> get database async {
+    if (_db != null) return _db!;
+    _db = await _initDb();
+    return _db!;
+  }
+
+  Future<Database> _initDb() async {
+    final path = join(await getDatabasesPath(), _dbName);
+    return openDatabase(
+      path,
+      version: _dbVersion,
+      onCreate: (db, version) async {
+        await db.execute('''
+          CREATE TABLE $table (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            content TEXT NOT NULL,
+            createdAt INTEGER NOT NULL,
+            deadline INTEGER
+          )
+        ''');
+      },
+    );
+  }
+
+  Future<int> insert(Map<String, Object?> row) async {
+    final db = await database;
+    return db.insert(table, row);
+  }
+
+  Future<List<Map<String, Object?>>> queryAll() async {
+    final db = await database;
+    return db.rawQuery('''
+      SELECT * FROM $table
+      ORDER BY
+        CASE WHEN deadline IS NULL THEN 1 ELSE 0 END,
+        deadline ASC,
+        createdAt DESC
+    ''');
+  }
+
+  Future<int> update(int id, Map<String, Object?> row) async {
+    final db = await database;
+    return db.update(table, row, where: 'id = ?', whereArgs: [id]);
+  }
+
+  Future<int> delete(int id) async {
+    final db = await database;
+    return db.delete(table, where: 'id = ?', whereArgs: [id]);
+  }
+}
