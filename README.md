@@ -43,7 +43,7 @@ Project ini dibuat untuk memenuhi tugas Elearning.
 ![Notes](screenshots/halamanUtama.jpeg)
 
 ### Form Tambah / Edit
-![Form](screenshots/Formnote.png)
+![Form](screenshots/Formnote.jpeg)
 
 ### beranda
 ![Beranda](screenshots/beranda.jpeg)
